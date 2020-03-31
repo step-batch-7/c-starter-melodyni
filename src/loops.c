@@ -10,7 +10,7 @@ int productOfNBetween(int,int);
 void printOddInRange(int, int);
 void printNthInRange(int, int, int);
 int sumOfEvenInRange(int, int);
-
+void printOddInRangeReverse(int, int);
 
 int factorial(int num){
   if(num == 0){
@@ -94,8 +94,18 @@ int sumOfEvenInRange(int startOfRange, int endOfRange){
   return totalSum;
 };
 
+void printOddInRangeReverse(int startOfRange, int endOfRange){
+  int num = endOfRange % 2 == 0? endOfRange - 1 : endOfRange;
+  printf("\nOdd Numbers between %d and %d", startOfRange, endOfRange);
+  while(num >= startOfRange){
+    printf("\n%d", num);
+    num = num-2;
+  };
+};
+
 int main(void){
-  int num1, num2, num3, num4, num5, num6, num7, num8, num9, num10, num11, num12, num13, num14 ,num15, num16, num17;
+  int num1, num2, num3, num4, num5, num6, num7, num8, num9, num10, num11;
+  int num12, num13, num14 ,num15, num16, num17, num18, num19;
 
   printf("Enter a number to calculate its factorial: ");
   scanf("%d", &num1);
@@ -136,6 +146,10 @@ int main(void){
   printf("\n\nEnter two numbers for sum of all evens in range: ");
   scanf("%d %d", &num16, &num17);
   printf("Sum of all even numbers between %d and %d: %d",num16, num17, sumOfEvenInRange(num16, num17));
+
+  printf("\n\nEnter two numbers to print all odd numbers between them backward: ");
+  scanf("%d %d", &num18, &num19);
+  printOddInRangeReverse(num18, num19);
 
   return 0;
 };
