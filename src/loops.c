@@ -5,6 +5,7 @@ void printfiboSeries(int);
 void printOddSeries(int);
 void printOddSeries(int);
 void printMultiplicationTable(int, int);
+int sumOfNBetween(int,int);
 
 int factorial(int num){
   if(num == 0){
@@ -45,9 +46,17 @@ void printMultiplicationTable(int num, int multiplierLimit){
   };
 };
 
+int sumOfNBetween(int start, int end){
+  int totalSum = 0,num;
+  for(num = start; num<=end; num++){
+    totalSum = totalSum + num;
+  };
+  return totalSum;
+};
+
 
 int main(void){
-  int num1, num2, num3, num4, num5, num6;
+  int num1, num2, num3, num4, num5, num6, num7, num8;
 
   printf("Enter a number to calculate its factorial: ");
   scanf("%d", &num1);
@@ -68,6 +77,11 @@ int main(void){
   printf("\n\nEnter two numbers m and n to print multiplication table of m until n: ");
   scanf("%d %d", &num5, &num6);
   printMultiplicationTable(num5, num6);
+
+  printf("\n\nEnter two numbers m and n to print sum of all numbers between them: ");
+  scanf("%d %d", &num7, &num8);
+  printf("Sum of all numbers between %d and %d: %d",num7, num8, sumOfNBetween(num7, num8));
+
 
   return 0;
 };
