@@ -4,13 +4,14 @@ int factorial(int);
 void printfiboSeries(int);
 void printOddSeries(int);
 void printOddSeries(int);
+void printMultiplicationTable(int, int);
 
 int factorial(int num){
   if(num == 0){
     return 1;
-  }
+  };
   return num * factorial(num -1);
-}
+};
 
 void printFiboSeries(int term){
   int previousTerm = -1;
@@ -35,10 +36,18 @@ void printEvenSeries(int endOfSeries){
   for(num=2; num<=endOfSeries; num+=2){
     printf("%d\n",num);
   };
-}
+};
+
+void printMultiplicationTable(int num, int multiplierLimit){
+  int multiplier;
+  for (multiplier = 1; multiplier<= multiplierLimit; multiplier++){
+    printf("\n%d", num * multiplier);
+  };
+};
+
 
 int main(void){
-  int num1, num2, num3, num4;
+  int num1, num2, num3, num4, num5, num6;
 
   printf("Enter a number to calculate its factorial: ");
   scanf("%d", &num1);
@@ -48,13 +57,17 @@ int main(void){
   scanf("%d", &num2);
   printFiboSeries(num2);
 
-  printf("\n\nEnter a number to print all odd numbers in that range: ");
+  printf("\n\nEnter a number to print all odd numbers till then: ");
   scanf("%d", &num3);
   printOddSeries(num3);
 
-  printf("\n\nEnter a number to print all even numbers in that range: ");
+  printf("\n\nEnter a number to print all even numbers till then: ");
   scanf("%d", &num4);
   printEvenSeries(num4);
 
+  printf("\n\nEnter two numbers m and n to print multiplication table of m until n: ");
+  scanf("%d %d", &num5, &num6);
+  printMultiplicationTable(num5, num6);
+
   return 0;
-}
+};
