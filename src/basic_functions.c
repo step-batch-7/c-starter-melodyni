@@ -9,6 +9,8 @@ double calcSI(double,double,double);
 double calcCI(double,double,double);
 double convertInCentigrade(double);
 double convertInFahrenheit(double);
+int getGreater(int,int);
+int getGreatestofThree(int,int,int);
 
 char isEven(int num){
   return num % 2 == 0;
@@ -42,9 +44,21 @@ double convertInFahrenheit(double tempInCentigrade){
   return (tempInCentigrade*9)/5+32;
 }
 
+int getGreater(int numA, int numB){
+  if(numA>numB){
+    return numA;
+  }
+  return numB;
+}
+
+int getGreatestOfThree(int numA,int numB,int numC){
+  const greaterNum = getGreater(numA,numB);
+  return getGreater(greaterNum,numC);
+}
+
 
 int main(void){
-  int num1, num2, num3, num4, num5;
+  int num1, num2, num3, num4, num5, num6, num7, num8;
   double principalAmount1, rate1, time1, principalAmount2, rate2, time2;
   double tempInCentigrade,tempInFahrenheit;
   printf("Enter a number to check whether it is even or not: ");
@@ -86,5 +100,10 @@ int main(void){
   printf("\n\nEnter temperate in fahrenheit to get in centigrade: ");
   scanf("%lf",&tempInCentigrade);
   printf("temperature in Centigrade: %lf", convertInFahrenheit(tempInCentigrade));
+
+  printf("\n\nEnter three numbers to get greatest of them: ");
+  scanf("%d %d %d", &num6, &num7, &num8);
+  printf("greatest number: %d", getGreatestOfThree(num6,num7,num8));
+  
 };
 
