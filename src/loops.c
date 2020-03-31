@@ -7,6 +7,7 @@ void printOddSeries(int);
 void printMultiplicationTable(int, int);
 int sumOfNBetween(int,int);
 int productOfNBetween(int,int);
+void printOddInRange(int, int);
 
 int factorial(int num){
   if(num == 0){
@@ -63,10 +64,17 @@ int productOfNBetween(int start, int end){
   return totalProduct;
 };
 
-
+void printOddInRange(int startOfRange, int endOfRange){
+  int num = startOfRange % 2 == 0? startOfRange + 1 : startOfRange;
+  printf("\nOdd Numbers between %d and %d", startOfRange, endOfRange);
+  while(num<= endOfRange){
+    printf("\n%d", num);
+    num = num+2;
+  };
+};
 
 int main(void){
-  int num1, num2, num3, num4, num5, num6, num7, num8, num9, num10;
+  int num1, num2, num3, num4, num5, num6, num7, num8, num9, num10, num11, num12;
 
   printf("Enter a number to calculate its factorial: ");
   scanf("%d", &num1);
@@ -94,7 +102,11 @@ int main(void){
 
   printf("\n\nEnter two numbers to print product of all numbers between them: ");
   scanf("%d %d", &num9, &num10);
-  printf("Product of all numbers between %d and %d: %d",num7, num8, productOfNBetween(num9, num10));
+  printf("Product of all numbers between %d and %d: %d",num9, num10, productOfNBetween(num9, num10));
+
+  printf("\n\nEnter two numbers to print all odd numbers between them: ");
+  scanf("%d %d", &num11, &num12);
+  printOddInRange(num11, num12);
 
   return 0;
 };
