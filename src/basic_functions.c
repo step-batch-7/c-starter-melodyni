@@ -11,6 +11,7 @@ double convertInCentigrade(double);
 double convertInFahrenheit(double);
 int getGreater(int,int);
 int getGreatestofThree(int,int,int);
+double average(float,float,float);
 
 char isEven(int num){
   return num % 2 == 0;
@@ -52,13 +53,18 @@ int getGreater(int numA, int numB){
 }
 
 int getGreatestOfThree(int numA,int numB,int numC){
-  const greaterNum = getGreater(numA,numB);
+  int greaterNum = getGreater(numA,numB);
   return getGreater(greaterNum,numC);
+}
+
+double average(float numA, float numB, float numC){
+  return (numA+numB+numC)/3;
 }
 
 
 int main(void){
   int num1, num2, num3, num4, num5, num6, num7, num8;
+  float num9, num10, num11;
   double principalAmount1, rate1, time1, principalAmount2, rate2, time2;
   double tempInCentigrade,tempInFahrenheit;
   printf("Enter a number to check whether it is even or not: ");
@@ -105,5 +111,8 @@ int main(void){
   scanf("%d %d %d", &num6, &num7, &num8);
   printf("greatest number: %d", getGreatestOfThree(num6,num7,num8));
   
+  printf("\n\nEnter three numbers to get its average: ");
+  scanf("%f %f %f", &num9, &num10, &num11);
+  printf("Average of %f, %f, %f: %lf", num9,num10,num11,average(num9,num10,num11));
 };
 
