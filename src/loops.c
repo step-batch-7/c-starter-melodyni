@@ -8,6 +8,7 @@ void printMultiplicationTable(int, int);
 int sumOfNBetween(int,int);
 int productOfNBetween(int,int);
 void printOddInRange(int, int);
+void printNthInRange(int,int,int);
 
 int factorial(int num){
   if(num == 0){
@@ -73,8 +74,16 @@ void printOddInRange(int startOfRange, int endOfRange){
   };
 };
 
+void printNthInRange(int interval, int start, int end){
+  int num;
+  printf("\nEvery %d number between %d and %d: \n", interval, start, end);
+  for(num=start; num<=end; num+=interval){
+    printf("%d\n",num);
+  };
+};
+
 int main(void){
-  int num1, num2, num3, num4, num5, num6, num7, num8, num9, num10, num11, num12;
+  int num1, num2, num3, num4, num5, num6, num7, num8, num9, num10, num11, num12, num13, num14 ,num15;
 
   printf("Enter a number to calculate its factorial: ");
   scanf("%d", &num1);
@@ -107,6 +116,10 @@ int main(void){
   printf("\n\nEnter two numbers to print all odd numbers between them: ");
   scanf("%d %d", &num11, &num12);
   printOddInRange(num11, num12);
+
+  printf("\n\nEnter three numbers n, a and b to a series between a and b with interval n: ");
+  scanf("%d %d %d", &num13, &num14, &num15);
+  printNthInRange(num13, num14, num15);
 
   return 0;
 };
