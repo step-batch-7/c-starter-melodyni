@@ -81,7 +81,8 @@ int main(void){
   int num1, num2, num3, num4, num5, num6, num7, num8, num9, num10, num11;
   float num12, num13, num14;
   double principalAmount1, rate1, time1, principalAmount2, rate2, time2;
-  double tempInCentigrade,tempInFahrenheit;
+  double tempInCentigrade, tempInFahrenheit;
+
   printf("Enter a number to check whether it is even or not: ");
   scanf("%d", &num1);
   printf("%d is %s", num1, isEven(num1)? "even":"not even");
@@ -138,5 +139,6 @@ int main(void){
   scanf("%f %f %f", &num12, &num13, &num14);
   printf("Average of %f, %f, %f: %lf",num12, num13, num14,average(num12, num13,num14));
 
+  return 0;
 };
 
