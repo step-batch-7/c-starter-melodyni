@@ -8,7 +8,9 @@ void printMultiplicationTable(int, int);
 int sumOfNBetween(int,int);
 int productOfNBetween(int,int);
 void printOddInRange(int, int);
-void printNthInRange(int,int,int);
+void printNthInRange(int, int, int);
+int sumOfEvenInRange(int, int);
+
 
 int factorial(int num){
   if(num == 0){
@@ -82,8 +84,18 @@ void printNthInRange(int interval, int start, int end){
   };
 };
 
+int sumOfEvenInRange(int startOfRange, int endOfRange){
+  int num = startOfRange % 2 == 0? startOfRange : startOfRange + 1;
+  int totalSum = 0;
+  while(num<= endOfRange){
+    totalSum = totalSum + num;
+    num = num+2;
+  };
+  return totalSum;
+};
+
 int main(void){
-  int num1, num2, num3, num4, num5, num6, num7, num8, num9, num10, num11, num12, num13, num14 ,num15;
+  int num1, num2, num3, num4, num5, num6, num7, num8, num9, num10, num11, num12, num13, num14 ,num15, num16, num17;
 
   printf("Enter a number to calculate its factorial: ");
   scanf("%d", &num1);
@@ -120,6 +132,10 @@ int main(void){
   printf("\n\nEnter three numbers n, a and b to a series between a and b with interval n: ");
   scanf("%d %d %d", &num13, &num14, &num15);
   printNthInRange(num13, num14, num15);
+
+  printf("\n\nEnter two numbers for sum of all evens in range: ");
+  scanf("%d %d", &num16, &num17);
+  printf("Sum of all even numbers between %d and %d: %d",num16, num17, sumOfEvenInRange(num16, num17));
 
   return 0;
 };
